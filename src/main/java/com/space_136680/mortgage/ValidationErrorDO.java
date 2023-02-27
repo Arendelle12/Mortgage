@@ -6,12 +6,24 @@ package com.space_136680.mortgage;
 
 public class ValidationErrorDO implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public ValidationErrorDO() {
-    }
+	@org.kie.api.definition.type.Label(value = "Error and cause")
+	private java.lang.String error;
 
+	public ValidationErrorDO() {
+	}
 
+	public java.lang.String getError() {
+		return this.error;
+	}
 
+	public void setError(java.lang.String error) {
+		this.error = error;
+	}
+
+	public ValidationErrorDO(java.lang.String error) {
+		this.error = error;
+	}
 
 }
