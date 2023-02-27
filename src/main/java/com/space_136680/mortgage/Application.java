@@ -8,16 +8,19 @@ public class Application implements java.io.Serializable {
 
 	static final long serialVersionUID = 1L;
 
-	@org.kie.api.definition.type.Label(value = "Years of amortization")
+	@org.kie.api.definition.type.Label("Years of amortization")
 	private java.lang.Integer amortization;
-	@org.kie.api.definition.type.Label(value = "Applicant")
+	@org.kie.api.definition.type.Label("Applicant")
 	private com.space_136680.mortgage.Applicant applicant;
-	@org.kie.api.definition.type.Label(value = "Down Payment")
+	@org.kie.api.definition.type.Label("Down Payment")
 	private java.lang.Integer downpayment;
-	@org.kie.api.definition.type.Label(value = "Mortgage amount")
+	@org.kie.api.definition.type.Label("Mortgage amount")
 	private java.lang.Integer mortgageamount;
-	@org.kie.api.definition.type.Label(value = "Property")
+	@org.kie.api.definition.type.Label("Property")
 	private com.space_136680.mortgage.Property property;
+
+	@org.kie.api.definition.type.Label(value = "Error details")
+	private com.space_136680.mortgage.ValidationErrorDO errors;
 
 	public Application() {
 	}
@@ -62,14 +65,25 @@ public class Application implements java.io.Serializable {
 		this.property = property;
 	}
 
-	public Application(java.lang.Integer amortization, com.space_136680.mortgage.Applicant applicant,
+	public com.space_136680.mortgage.ValidationErrorDO getErrors() {
+		return this.errors;
+	}
+
+	public void setErrors(com.space_136680.mortgage.ValidationErrorDO errors) {
+		this.errors = errors;
+	}
+
+	public Application(java.lang.Integer amortization,
+			com.space_136680.mortgage.Applicant applicant,
 			java.lang.Integer downpayment, java.lang.Integer mortgageamount,
-			com.space_136680.mortgage.Property property) {
+			com.space_136680.mortgage.Property property,
+			com.space_136680.mortgage.ValidationErrorDO errors) {
 		this.amortization = amortization;
 		this.applicant = applicant;
 		this.downpayment = downpayment;
 		this.mortgageamount = mortgageamount;
 		this.property = property;
+		this.errors = errors;
 	}
 
 }
