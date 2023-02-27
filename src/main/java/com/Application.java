@@ -6,12 +6,70 @@ package com;
 
 public class Application implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Application() {
-    }
+	@org.kie.api.definition.type.Label(value = "Years of amortization")
+	private java.lang.Integer amortization;
+	@org.kie.api.definition.type.Label(value = "Applicant")
+	private com.Applicant applicant;
+	@org.kie.api.definition.type.Label(value = "Down Payment")
+	private java.lang.Integer downpayment;
+	@org.kie.api.definition.type.Label(value = "Mortgage amount")
+	private java.lang.Integer mortgageamount;
+	@org.kie.api.definition.type.Label(value = "Property")
+	private com.Property property;
 
+	public Application() {
+	}
 
+	public java.lang.Integer getAmortization() {
+		return this.amortization;
+	}
 
+	public void setAmortization(java.lang.Integer amortization) {
+		this.amortization = amortization;
+	}
+
+	public com.Applicant getApplicant() {
+		return this.applicant;
+	}
+
+	public void setApplicant(com.Applicant applicant) {
+		this.applicant = applicant;
+	}
+
+	public java.lang.Integer getDownpayment() {
+		return this.downpayment;
+	}
+
+	public void setDownpayment(java.lang.Integer downpayment) {
+		this.downpayment = downpayment;
+	}
+
+	public java.lang.Integer getMortgageamount() {
+		return this.mortgageamount;
+	}
+
+	public void setMortgageamount(java.lang.Integer mortgageamount) {
+		this.mortgageamount = mortgageamount;
+	}
+
+	public com.Property getProperty() {
+		return this.property;
+	}
+
+	public void setProperty(com.Property property) {
+		this.property = property;
+	}
+
+	public Application(java.lang.Integer amortization, com.Applicant applicant,
+			java.lang.Integer downpayment, java.lang.Integer mortgageamount,
+			com.Property property) {
+		this.amortization = amortization;
+		this.applicant = applicant;
+		this.downpayment = downpayment;
+		this.mortgageamount = mortgageamount;
+		this.property = property;
+	}
 
 }
