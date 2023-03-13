@@ -1,0 +1,12 @@
+package com.space_136680.mortgage;
+
+import java.lang.Number;
+
+rule "Retract Validation"
+	dialect "mvel"
+	ruleflow-group "error"
+	when
+		vdo : ValidationErrorDO( )
+	then
+		retract( vdo );
+end
